@@ -11,6 +11,38 @@ dbwebb init-me
 # Kmom01
 #
 
+#
+# Create a own sandbox
+# https://dbwebb.se/uppgift/skapa-din-egen-sandbox-for-javascript-testprogram
+#
+cp -r example/sandbox me/kmom01
+dbwebb validate sandbox
+
+
+#
+# Create a me-page
+# https://dbwebb.se/uppgift/skapa-en-me-sida-med-javascript
+#
+cp -r example/redovisa me
+dbwebb validate redovisa
+
+
+#
+# Lab javascript1
+# https://dbwebb.se/uppgift/javascript-med-variabler-loopar-och-inbyggda-funktioner-1
+#
+dbwebb recreate javascript1
+dbwebb validate javascript1
+
+
+#
+# Create a flag
+# https://dbwebb.se/uppgift/gor-svenska-flaggan-i-html-och-css-dbjs
+#
+cp -r example/flag/flag1 me/kmom01
+dbwebb validate flag1
+
+
 
 # --------------------------------------------------------------------------
 #
