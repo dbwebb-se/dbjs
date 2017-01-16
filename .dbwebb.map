@@ -5,16 +5,16 @@
 #
 
 # kmom01
-me/kmom01/
 me/kmom01/sandbox
 me/kmom01/javascript1
 me/kmom01/flag1
 
 
 # kmom02
-#me/kmom02/
 me/kmom02/jetty
 me/kmom02/sql1
+me/kmom02/javascript2
+me/kmom02/flag2
 
 
 # kmom03

@@ -49,6 +49,37 @@ dbwebb validate flag1
 # Kmom02
 #
 
+#
+# Lab sql1
+# https://dbwebb.se/uppgift/sql-lab-introduktion-till-sql-dbjs
+#
+dbwebb recreate sql1
+dbwebb validate sql1
+
+
+#
+# Make an ER model
+# https://dbwebb.se/uppgift/skapa-er-modell-av-databasen-jetty
+#
+cp me/redovisa/redovisning.html me/redovisa/jetty.html
+dbwebb validate redovisa
+
+
+#
+# Lab javascript2
+# https://dbwebb.se/uppgift/javascript-med-funktioner-dbjs
+#
+dbwebb recreate javascript2
+dbwebb validate javascript2
+
+
+#
+# Create a flag
+# https://dbwebb.se/uppgift/gor-svenska-flaggan-med-javascript-html-och-css-dbjs
+#
+cp -r example/flag/flag2 me/kmom02
+dbwebb validate flag2
+
 
 
 # --------------------------------------------------------------------------
