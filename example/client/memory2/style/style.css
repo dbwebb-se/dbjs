@@ -1,0 +1,20 @@
+#content {
+    width: 800px;
+}
+
+.card {
+    float: left;
+    outline: 1px solid black;
+    width: 150px;
+    height: 200px;
+    text-align: center;
+    font-size: 5em;
+    background-color: #eee;
+    background-repeat: no-repeat;
+    /*padding-top: 1em;*/
+}
+
+.card:hover{
+    cursor: pointer;
+    background-color: #ccc;
+}
