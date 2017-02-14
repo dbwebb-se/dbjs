@@ -19,9 +19,12 @@ me/kmom02/flag2
 
 # kmom03
 me/kmom03/sqlite
+me/kmom03/node1
+#me/kmom03/sql2
 me/kmom03/client
 
 # kmom04
+#me/kmom04/node2
 me/kmom04/server
 
 # kmom05

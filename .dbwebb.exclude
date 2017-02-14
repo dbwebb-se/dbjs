@@ -6,7 +6,6 @@
 /.default/
 /bin
 /build
-/node_modules/
 /vendor/
 /circle.yml
 /package.json
@@ -23,6 +22,9 @@
 /.git/
 /.gitmodules/
 /.gitignore
+
+# node_modules
+/node_modules/
 
 # Limit vendor uploads
 vendor/**/.git/
