@@ -141,6 +141,51 @@ cd me/kmom03/sql2 && ./answer.bash; [[ $? = 42 ]]
 dbwebb validate sql2
 
 
+#
+# me/kmom03/nodetest
+#
+dbwebb validate nodetest
+
+
+
+#
+# me/kmom03/sqlite
+#
+dbwebb validate sqlite
+
+
+
+#
+# me/kmom03/node1
+#
+dbwebb recreate node1
+cd me/kmom03/node1 && node ./answer.js; [[ $? = 42 ]]
+dbwebb validate node1
+
+
+
+#
+# me/kmom03/server
+#
+dbwebb validate invoice
+
+
+
+#
+# me/kmom03/invoice
+#
+dbwebb validate invoice
+
+
+
+#
+# me/kmom03/sql2
+#
+dbwebb recreate sql2
+cd me/kmom03/sql2 && ./answer.bash; [[ $? = 42 ]]
+dbwebb validate sql2
+
+
 
 # --------------------------------------------------------------------------
 #
