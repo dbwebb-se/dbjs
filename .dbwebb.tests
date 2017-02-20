@@ -54,6 +54,7 @@ dbwebb validate flag1
 # https://dbwebb.se/uppgift/sql-lab-introduktion-till-sql-dbjs
 #
 dbwebb recreate sql1
+cd me/kmom02/sql1 && ./answer.bash; [[ $? = 42 ]]
 dbwebb validate sql1
 
 
@@ -73,6 +74,7 @@ dbwebb recreate javascript2
 dbwebb validate javascript2
 
 
+
 #
 # Create a flag
 # https://dbwebb.se/uppgift/gor-svenska-flaggan-med-javascript-html-och-css-dbjs
@@ -86,6 +88,57 @@ dbwebb validate flag2
 #
 # Kmom03
 #
+
+#
+# nodetest
+#
+dbwebb validate nodetest
+
+
+
+#
+# sqlite
+# https://dbwebb.se/kunskap/sqlite-och-nodejs
+#
+dbwebb validate sqlite
+
+
+
+#
+# node1
+# https://dbwebb.se/uppgift/introduktion-till-nodejs
+#
+dbwebb recreate node1
+cd me/kmom03/node1 && node answer.js; [[ $? = 42 ]]
+dbwebb validate node1
+
+
+
+#
+# server
+# https://dbwebb.se/uppgift/skapa-en-restful-http-server-med-node-js
+#
+touch me/kmom03/server/{index,server}.js
+dbwebb validate server
+
+
+
+#
+# invoice
+# https://dbwebb.se/uppgift/bygg-en-faktureringsmotor-for-batklubben
+#
+touch me/kmom03/invoice/index.js
+dbwebb validate invoice
+
+
+
+#
+# sql2
+# https://dbwebb.se/uppgift/sql-lab-fortsattning-med-sql
+#
+dbwebb recreate sql2
+cd me/kmom03/sql2 && ./answer.bash; [[ $? = 42 ]]
+dbwebb validate sql2
 
 
 
