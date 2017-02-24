@@ -26,8 +26,11 @@ me/kmom03/invoice
 me/kmom03/sql2
 
 # kmom04
-#me/kmom04/node2
+me/kmom04/mysql
+me/kmom04/skolan
 me/kmom04/client
+me/kmom04/npm-mysql
+#me/kmom04/node2
 
 # kmom05
 me/kmom05/
@@ -36,8 +39,8 @@ me/kmom05/
 me/kmom06/
 
 # kmom10
-me/kmom10/
+me/kmom10/proj
+me/kmom10/exam
 
 # other
-me/proj
 me/redovisa

@@ -192,6 +192,27 @@ dbwebb validate sql2
 # Kmom04
 #
 
+#
+# mysql
+#
+dbwebb validate mysql
+
+#
+# skolan
+#
+touch me/kmom04/skolan/skolan.sql
+dbwebb validate skolan
+
+#
+# client
+#
+dbwebb validate client
+
+#
+# npm-mysql
+#
+dbwebb validate npm-mysql
+
 
 
 
