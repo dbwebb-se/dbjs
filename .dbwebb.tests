@@ -142,21 +142,21 @@ dbwebb validate sql2
 
 
 #
-# me/kmom03/nodetest
+# nodetest
 #
 dbwebb validate nodetest
 
 
 
 #
-# me/kmom03/sqlite
+# sqlite
 #
 dbwebb validate sqlite
 
 
 
 #
-# me/kmom03/node1
+# node1
 #
 dbwebb recreate node1
 cd me/kmom03/node1 && node ./answer.js; [[ $? = 42 ]]
@@ -165,21 +165,21 @@ dbwebb validate node1
 
 
 #
-# me/kmom03/server
+# server
 #
 dbwebb validate invoice
 
 
 
 #
-# me/kmom03/invoice
+# invoice
 #
 dbwebb validate invoice
 
 
 
 #
-# me/kmom03/sql2
+# sql2
 #
 dbwebb recreate sql2
 cd me/kmom03/sql2 && ./answer.bash; [[ $? = 42 ]]
@@ -213,6 +213,17 @@ dbwebb validate client
 #
 dbwebb validate npm-mysql
 
+#
+# node2
+#
+dbwebb recreate node2
+cd me/kmom04/node2 && node ./answer.js; [[ $? = 42 ]]
+dbwebb validate node2
+
+#
+# terminal
+#
+dbwebb validate terminal
 
 
 
