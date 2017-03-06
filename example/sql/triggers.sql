@@ -83,6 +83,7 @@ CREATE TABLE AccountLog
     `when` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `what` VARCHAR(20),
     `account` CHAR(4),
+    `balance` DECIMAL(4, 2),
     `amount` DECIMAL(4, 2)
 );
 
@@ -157,8 +158,9 @@ DROP TRIGGER IF EXISTS LogBalanceUpdate;
 CREATE TRIGGER LogBalanceUpdate
 AFTER UPDATE
 ON Account FOR EACH ROW
-	INSERT INTO AccountLog (`what`, `account`, `amount`)
-		VALUES ("trigger", NEW.id, NEW.balance - OLD.balance);
+	INSERT INTO AccountLog (`what`, `account`, `balance`, `amount`)
+		VALUES ("trigger", NEW.id, NEW.balance, NEW.balance - OLD.balance);
 
+CALL moveMoney("1111", "2222", 1.5);
 
 SHOW TRIGGERS;
