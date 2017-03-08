@@ -13,7 +13,14 @@ var connection = mysql.createConnection({
     database : "nodedb"
 });
 
-connection.connect();
+connection.connect((err) => {
+    if (err) {
+        console.error("Error connecting to database.\n" + err.stack);
+        process.exit(2);
+    }
+
+    console.log("Connected as id " + connection.threadId);
+});
 
 connection.query("SELECT 1 + 1 AS solution", (err, res/*, fields*/) => {
     if (err) {
