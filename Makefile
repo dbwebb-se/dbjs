@@ -136,21 +136,21 @@ clean-all: clean
 # 
 # Shortcuts for frequent usage 
 #
-# target: validate                - Execute dbwebb validate with what=part-to-validate.
+# target: validate                - Execute dbwebb validate what=part-to-validate.
 .PHONY: validate
 validate: dbwebb-validate
 	@$(call HELPTEXT,$@)
 
 
 
-# target: publish                 - Execute dbwebb publish with what=part-to-validate.
+# target: publish                 - Execute dbwebb publish what=part-to-validate.
 .PHONY: publish
 publish: dbwebb-publish
 	@$(call HELPTEXT,$@)
 
 
 
-# target: inspect                 - Run tests with dbwebb-inspect where what=kmom01.
+# target: inspect                 - Execute dbwebb inspect what=kmom01.
 .PHONY: inspect
 inspect: dbwebb-inspect
 	@$(call HELPTEXT,$@)
@@ -208,7 +208,7 @@ dbwebb-validate-run:
 
 
 
-# target: dbwebb-validate         - Execute dbwebb validate with what=part-to-validate.
+# target: dbwebb-validate         - Execute dbwebb validate what=part-to-validate.
 .PHONY: dbwebb-validate
 dbwebb-validate:
 	@$(call HELPTEXT,$@)
@@ -224,7 +224,7 @@ dbwebb-publish-run:
 
 
 
-# target: dbwebb-publish          - Execute dbwebb publish with what=part-to-validate-publish.
+# target: dbwebb-publish          - Execute dbwebb publish what=part-to-validate-publish.
 .PHONY: dbwebb-publish
 dbwebb-publish:
 	@$(call HELPTEXT,$@)
@@ -253,7 +253,7 @@ dbwebb-inspect-check:
 
 
 
-# target: dbwebb-inspect          - Run tests with dbwebb-inspect where kmom=kmom01.
+# target: dbwebb-inspect          - Execute dbwebb inspect what=kmom01.
 .PHONY: dbwebb-inspect
 dbwebb-inspect:
 	@$(call HELPTEXT,$@)
