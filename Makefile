@@ -138,25 +138,22 @@ clean-all: clean
 #
 # target: validate                - Execute dbwebb validate with what=part-to-validate.
 .PHONY: validate
-validate:
+validate: dbwebb-validate
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) $(what) $(arg1)
 
 
 
 # target: publish                 - Execute dbwebb publish with what=part-to-validate.
 .PHONY: publish
-publish:
+publish: dbwebb-publish
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ $(what) $(arg1)
 
 
 
-# target: inspect                 - Run tests with dbwebb-inspect where kmom=kmom01.
+# target: inspect                 - Run tests with dbwebb-inspect where what=kmom01.
 .PHONY: inspect
-inspect:
+inspect: dbwebb-inspect
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_INSPECT) . $(kmom)
 
 
 
@@ -215,7 +212,7 @@ dbwebb-validate-run:
 .PHONY: dbwebb-validate
 dbwebb-validate:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) $(what) $(arg1)
+	env PATH=$(PATH) $(DBWEBB_VALIDATE) $(what) $(arg1) $(kmom)
 
 
 
@@ -231,7 +228,7 @@ dbwebb-publish-run:
 .PHONY: dbwebb-publish
 dbwebb-publish:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ $(what) $(arg1)
+	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ $(what) $(arg1) $(kmom)
 
 
 
@@ -260,7 +257,7 @@ dbwebb-inspect-check:
 .PHONY: dbwebb-inspect
 dbwebb-inspect:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_INSPECT) . $(kmom)
+	env PATH=$(PATH) $(DBWEBB_INSPECT) . $(what) $(arg1) $(kmom)
 
 
 
