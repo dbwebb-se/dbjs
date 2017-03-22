@@ -1,0 +1,24 @@
+include incl/header-database.pug
+
+p Searching through mopeds
+
+<form method="get" action="/db/search">
+    <input type="search" name="search" value="#{search}">
+    <input type="submit" name="doSearch" value="Search">
+</form>
+
+- console.log(search)
+p= doSearch
+
+if doSearch
+    p The resultset was:
+
+    each row, rownum in resultset
+        p= "Row number: " + rownum 
+        ul
+            each colvalue, colname in row
+                li= colname + ": " + colvalue
+
+    - console.log(resultset)
+
+include incl/footer.pug
