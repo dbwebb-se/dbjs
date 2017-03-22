@@ -1,0 +1,18 @@
+include incl/header-database.pug
+
+if object
+    p This matches the following.
+
+    <table>
+    <tr><th>Id</th><th>Text</th></tr>
+    tr
+        td= object.id
+        td= object.text
+        <td><a href="/db/edit/#{object.id}">Edit</a></td>
+    </table>
+else
+    p No match.
+
+- console.log(object)
+
+include incl/footer.pug

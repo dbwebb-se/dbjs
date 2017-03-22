@@ -1,0 +1,20 @@
+include incl/header-database.pug
+
+if object
+    p Edit this entry.
+
+    <form method="post" action="/db/edit">
+        <input type="hidden" name="id" value="#{object.id}">
+        <p><input type="text" name="text" value="#{object.text}"></p>
+        <input type="submit" name="doEdit" value="Save">
+        <input type="reset" value="Reset">
+    </form>
+    <p><a href="/db/view/#{object.id}">View</a></p>
+else
+    p No match.
+
+<p><a href="/db/view">View all</a></p>
+
+- console.log(object)
+
+include incl/footer.pug

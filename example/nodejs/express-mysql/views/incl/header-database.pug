@@ -1,3 +1,10 @@
 include header.pug
 
 h1 Database testing
+
+pre= sql
+
+if param
+    pre
+        each para in param
+            #{para} 

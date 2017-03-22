@@ -12,3 +12,15 @@ pre {
     background-color: #eee;
     padding: 0.5em;
 }
+
+table {
+    border: 1px solid #000;
+}
+
+th {
+    border-bottom: 1px solid #000;
+}
+
+td {
+    padding: 0 0.5em 0 0.5em;
+}
