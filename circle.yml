@@ -1,6 +1,7 @@
 test:
     pre:
-        make install
+        - make install
+
     #override:
     #    - make test
 
