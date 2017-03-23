@@ -1,6 +1,8 @@
-#test:
-#    override:
-#        - make test
+test:
+    pre:
+        make install
+    #override:
+    #    - make test
 
 notify:
   webhooks:
