@@ -223,6 +223,8 @@ dbwebb validate node2
 #
 # terminal
 #
+touch me/kmom04/terminal/allan
+chmod 755 me/kmom04/terminal/allan
 dbwebb validate terminal
 
 
