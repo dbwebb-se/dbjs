@@ -47,6 +47,6 @@ CREATE TABLE a_inventory2 (
     `number` INTEGER 
 );
 
-INSERT INTO a_supplier1
+INSERT INTO a_inventory2
 	VALUES
 		(1, 4), (2, 0), (3, 2), (4, 5);
