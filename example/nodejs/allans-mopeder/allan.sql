@@ -11,13 +11,13 @@
 -- 
 DROP TABLE IF EXISTS a_product;
 CREATE TABLE a_product (
-	`id` INTEGER PRIMARY KEY,
+    `id` INTEGER PRIMARY KEY,
     `name` VARCHAR(20) 
 );
 
 INSERT INTO a_product
-	VALUES
-		(1, "Husqvarna"), (2, "Zündapp"), (3, "Puch Dakota"), (4, "Vespa");
+    VALUES
+        (1, "Husqvarna"), (2, "Zündapp"), (3, "Puch Dakota"), (4, "Vespa");
 
 
 
@@ -26,13 +26,13 @@ INSERT INTO a_product
 -- 
 DROP TABLE IF EXISTS a_inventory;
 CREATE TABLE a_inventory (
-	`id` INTEGER PRIMARY KEY,
+    `id` INTEGER PRIMARY KEY,
     `number` INTEGER 
 );
 
 INSERT INTO a_inventory 
-	VALUES
-		(2, 2), (3, 3);
+    VALUES
+    (2, 2), (3, 3);
 
 
 
@@ -42,10 +42,10 @@ INSERT INTO a_inventory
 -- 
 DROP TABLE IF EXISTS a_supplier;
 CREATE TABLE a_supplier (
-	`id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+    `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
     `number` INTEGER 
 );
 
 INSERT INTO a_supplier 
-	VALUES
-		(1, 4), (2, 3), (3, 2);
+    VALUES
+        (1, 4), (2, 3), (3, 2);
