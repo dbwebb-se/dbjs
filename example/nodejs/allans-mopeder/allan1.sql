@@ -11,13 +11,13 @@
 -- 
 DROP TABLE IF EXISTS a_product1;
 CREATE TABLE a_product1 (
-        `id` INTEGER PRIMARY KEY,
+    `id` INTEGER PRIMARY KEY,
     `name` VARCHAR(20) 
 );
 
 INSERT INTO a_product1
     VALUES
-    (1, "Husqvarna"), (2, "Zündapp"), (3, "Puch Dakota"), (4, "Vespa");
+        (1, "Husqvarna"), (2, "Zündapp"), (3, "Puch Dakota"), (4, "Vespa");
 
 
 
@@ -32,8 +32,7 @@ CREATE TABLE a_inventory1 (
 
 INSERT INTO a_inventory1
     VALUES
-    (1, 5), (2, 2), (3, 3), (4, 0);
-
+        (1, 5), (2, 2), (3, 3), (4, 0);
 
 
 
