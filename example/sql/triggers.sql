@@ -1,11 +1,11 @@
 --
 -- https://dbwebb.se/kunskap/triggers-i-databas
 -- Example
--- 
+--
 DROP TABLE IF EXISTS Account;
 CREATE TABLE Account
 (
-	`id` CHAR(4) PRIMARY KEY,
+    `id` CHAR(4) PRIMARY KEY,
     `name` VARCHAR(8),
     `balance` DECIMAL(4, 2)
 );
@@ -13,7 +13,7 @@ CREATE TABLE Account
 DELETE FROM Account;
 INSERT INTO Account
 VALUES
-	("1111", "Adam", 10.0),
+    ("1111", "Adam", 10.0),
     ("2222", "Eva", 7.0)
 ;
 
@@ -29,37 +29,37 @@ DROP PROCEDURE moveMoney;
 DELIMITER //
 
 CREATE PROCEDURE moveMoney(
-	fromAccount CHAR(4),
+    fromAccount CHAR(4),
     toAccount CHAR(4),
     amount NUMERIC(4, 2)
 )
 BEGIN
-	DECLARE currentBalance NUMERIC(4, 2);
-    
+    DECLARE currentBalance NUMERIC(4, 2);
+
     START TRANSACTION;
 
-	SET currentBalance = (SELECT balance FROM Account WHERE id = fromAccount);
+    SET currentBalance = (SELECT balance FROM Account WHERE id = fromAccount);
     SELECT currentBalance;
 
-	IF currentBalance - amount < 0 THEN
-		ROLLBACK;
+    IF currentBalance - amount < 0 THEN
+        ROLLBACK;
         SELECT "Amount on the account is not enough to make transaction.";
 
-	ELSE
+    ELSE
 
-		UPDATE Account 
-		SET
-			balance = balance + amount
-		WHERE
-			id = toAccount;
+        UPDATE Account
+        SET
+            balance = balance + amount
+        WHERE
+            id = toAccount;
 
-		UPDATE Account 
-		SET
-			balance = balance - amount
-		WHERE
-			id = fromAccount;
-			
-		COMMIT;
+        UPDATE Account
+        SET
+            balance = balance - amount
+        WHERE
+            id = fromAccount;
+
+        COMMIT;
 
     END IF;
 
@@ -79,7 +79,7 @@ SELECT * FROM Account;
 DROP TABLE IF EXISTS AccountLog;
 CREATE TABLE AccountLog
 (
-	`id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+    `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
     `when` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `what` VARCHAR(20),
     `account` CHAR(4),
@@ -100,42 +100,42 @@ DROP PROCEDURE moveMoney;
 DELIMITER //
 
 CREATE PROCEDURE moveMoney(
-	fromAccount CHAR(4),
+    fromAccount CHAR(4),
     toAccount CHAR(4),
     amount NUMERIC(4, 2)
 )
 BEGIN
-	DECLARE currentBalance NUMERIC(4, 2);
-    
+    DECLARE currentBalance NUMERIC(4, 2);
+
     START TRANSACTION;
 
-	SET currentBalance = (SELECT balance FROM Account WHERE id = fromAccount);
+    SET currentBalance = (SELECT balance FROM Account WHERE id = fromAccount);
     SELECT currentBalance;
 
-	IF currentBalance - amount < 0 THEN
-		ROLLBACK;
+    IF currentBalance - amount < 0 THEN
+        ROLLBACK;
         SELECT "Amount on the account is not enough to make transaction.";
 
-	ELSE
+    ELSE
 
-		UPDATE Account 
-		SET
-			balance = balance + amount
-		WHERE
-			id = toAccount;
+        UPDATE Account
+        SET
+            balance = balance + amount
+        WHERE
+            id = toAccount;
 
-		UPDATE Account 
-		SET
-			balance = balance - amount
-		WHERE
-			id = fromAccount;
-		
+        UPDATE Account
+        SET
+            balance = balance - amount
+        WHERE
+        id = fromAccount;
+
         INSERT INTO AccountLog (what, account, amount)
-		VALUES
+        VALUES
             ("moveMoney from", fromAccount, -amount),
             ("moveMoney to", toAccount, amount);
-        
-		COMMIT;
+
+        COMMIT;
 
     END IF;
 
@@ -158,8 +158,8 @@ DROP TRIGGER IF EXISTS LogBalanceUpdate;
 CREATE TRIGGER LogBalanceUpdate
 AFTER UPDATE
 ON Account FOR EACH ROW
-	INSERT INTO AccountLog (`what`, `account`, `balance`, `amount`)
-		VALUES ("trigger", NEW.id, NEW.balance, NEW.balance - OLD.balance);
+    INSERT INTO AccountLog (`what`, `account`, `balance`, `amount`)
+        VALUES ("trigger", NEW.id, NEW.balance, NEW.balance - OLD.balance);
 
 CALL moveMoney("1111", "2222", 1.5);
 

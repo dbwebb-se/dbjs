@@ -1,18 +1,18 @@
--- 
+--
 -- Create and use an own database for this example.
--- 
+--
 -- CREATE DATABASE Allan;
 -- USE Allan;
 
 
 
--- 
+--
 -- Allans products that he sells
--- 
+--
 DROP TABLE IF EXISTS a_product1;
 CREATE TABLE a_product1 (
     `id` INTEGER PRIMARY KEY,
-    `name` VARCHAR(20) 
+    `name` VARCHAR(20)
 );
 
 INSERT INTO a_product1
@@ -21,13 +21,13 @@ INSERT INTO a_product1
 
 
 
--- 
+--
 -- Allans inventory, these products he has at home, ready to sell
--- 
+--
 DROP TABLE IF EXISTS a_inventory1;
 CREATE TABLE a_inventory1 (
     `id` INTEGER PRIMARY KEY,
-    `number` INTEGER 
+    `number` INTEGER
 );
 
 INSERT INTO a_inventory1
@@ -36,14 +36,14 @@ INSERT INTO a_inventory1
 
 
 
--- 
+--
 -- Allans central inventory, these products exists at the central inventory
 -- and can be soled with some delivery time
--- 
+--
 DROP TABLE IF EXISTS a_inventory2;
 CREATE TABLE a_inventory2 (
     `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
-    `number` INTEGER 
+    `number` INTEGER
 );
 
 INSERT INTO a_inventory2

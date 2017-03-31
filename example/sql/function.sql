@@ -4,13 +4,13 @@
 DROP TABLE IF EXISTS Exam;
 CREATE TABLE Exam
 (
-	`acronym` CHAR(4) PRIMARY KEY,
+    `acronym` CHAR(4) PRIMARY KEY,
     `score` INTEGER
 );
 
 INSERT INTO Exam
 VALUES
-	("adam", 77),
+    ("adam", 77),
     ("ubbe", 52),
     ("june", 49),
     ("john", 63),
@@ -28,18 +28,18 @@ DELIMITER //
 
 DROP FUNCTION IF EXISTS Grade //
 CREATE FUNCTION Grade(
-	score INTEGER
+    score INTEGER
 )
 RETURNS INTEGER
 BEGIN
-	RETURN score;
+    RETURN score;
 END
 //
 
 DELIMITER ;
 
-SELECT 
-	*,
+SELECT
+    *,
     Grade(score) AS `Grade`
 FROM Exam;
 
@@ -52,31 +52,31 @@ DELIMITER //
 
 DROP FUNCTION IF EXISTS Grade //
 CREATE FUNCTION Grade(
-	score INTEGER
+    score INTEGER
 )
 RETURNS CHAR(1)
 BEGIN
-	IF score >= 90 THEN
-		RETURN "A";
-	ELSEIF score >= 80 THEN
-		RETURN "B";
-	ELSEIF score >= 70 THEN
-		RETURN "C";
-	ELSEIF score >= 60 THEN
-		RETURN "D";
-	ELSEIF score >= 55 THEN
-		RETURN "E";
-	ELSEIF score >= 50 THEN
-		RETURN "FX";
-	END IF;
+    IF score >= 90 THEN
+        RETURN "A";
+    ELSEIF score >= 80 THEN
+        RETURN "B";
+    ELSEIF score >= 70 THEN
+        RETURN "C";
+    ELSEIF score >= 60 THEN
+        RETURN "D";
+    ELSEIF score >= 55 THEN
+        RETURN "E";
+    ELSEIF score >= 50 THEN
+        RETURN "FX";
+    END IF;
     RETURN "F";
 END
 //
 
 DELIMITER ;
 
-SELECT 
-	*,
+SELECT
+    *,
     Grade(score) AS `Grade`
 FROM Exam
 ORDER BY Grade;
@@ -89,25 +89,25 @@ DELIMITER //
 
 DROP FUNCTION IF EXISTS Grade2 //
 CREATE FUNCTION Grade2(
-	score INTEGER
+    score INTEGER
 )
 RETURNS CHAR(1)
 BEGIN
-	IF score >= 90 THEN
-		RETURN "5";
-	ELSEIF score >= 70 THEN
-		RETURN "4";
-	ELSEIF score >= 55 THEN
-		RETURN "3";
-	END IF;
+    IF score >= 90 THEN
+        RETURN "5";
+    ELSEIF score >= 70 THEN
+        RETURN "4";
+    ELSEIF score >= 55 THEN
+        RETURN "3";
+    END IF;
     RETURN "F";
 END
 //
 
 DELIMITER ;
 
-SELECT 
-	*,
+SELECT
+    *,
     Grade(score) AS `A-F, FX`,
     Grade2(score) AS `U, 3-5`
 FROM Exam
@@ -115,4 +115,4 @@ ORDER BY score DESC;
 
 
 SHOW FUNCTION STATUS;
-SHOW CREATE FUNCTION Grade; 
+SHOW CREATE FUNCTION Grade;
