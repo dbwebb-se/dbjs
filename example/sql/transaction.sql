@@ -1,11 +1,11 @@
 --
 -- https://dbwebb.se/kunskap/transaktioner-i-databas
 -- Example transactions
--- 
+--
 DROP TABLE IF EXISTS Account;
 CREATE TABLE Account
 (
-	`id` CHAR(4) PRIMARY KEY,
+    `id` CHAR(4) PRIMARY KEY,
     `name` VARCHAR(8),
     `balance` DECIMAL(4, 2)
 );
@@ -13,7 +13,7 @@ CREATE TABLE Account
 DELETE FROM Account;
 INSERT INTO Account
 VALUES
-	("1111", "Adam", 10.0),
+    ("1111", "Adam", 10.0),
     ("2222", "Eva", 7.0)
 ;
 
@@ -23,18 +23,18 @@ SELECT * FROM Account;
 --
 -- Move the money
 --
-UPDATE Account 
+UPDATE Account
 SET
-	balance = balance + 1.5
+    balance = balance + 1.5
 WHERE
-	id = "2222";
+    id = "2222";
 
-UPDATE Account 
+UPDATE Account
 SET
-	balance = balance - 1.5
+    balance = balance - 1.5
 WHERE
-	id = "1111";
-    
+    id = "1111";
+
 SELECT * FROM Account;
 
 
@@ -43,18 +43,18 @@ SELECT * FROM Account;
 --
 START TRANSACTION;
 
-UPDATE Account 
+UPDATE Account
 SET
-	balance = balance + 1.5
+    balance = balance + 1.5
 WHERE
-	id = "2222";
+    id = "2222";
 
-UPDATE Account 
+UPDATE Account
 SET
-	balance = balance - 1.5
+    balance = balance - 1.5
 WHERE
-	id = "1111";
-    
+    id = "1111";
+
 COMMIT;
 
 SELECT * FROM Account;
