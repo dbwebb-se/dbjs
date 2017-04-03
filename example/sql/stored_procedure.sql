@@ -114,7 +114,7 @@ BEGIN
 
     UPDATE Account
     SET
-        vbalance = balance - amount
+        balance = balance - amount
     WHERE
         id = fromAccount;
 

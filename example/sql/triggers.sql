@@ -128,7 +128,7 @@ BEGIN
         SET
             balance = balance - amount
         WHERE
-        id = fromAccount;
+            id = fromAccount;
 
         INSERT INTO AccountLog (what, account, amount)
         VALUES
