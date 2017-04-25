@@ -10,7 +10,7 @@ CREATE TABLE Account
     `balance` DECIMAL(4, 2)
 );
 
-DELETE FROM Account;
+-- DELETE FROM Account;
 INSERT INTO Account
 VALUES
 	("1111", "Adam", 10.0),
@@ -63,7 +63,7 @@ SELECT * FROM Account;
 --
 -- Procedure moveMoney()
 --
-DROP PROCEDURE moveMoney;
+DROP PROCEDURE IF EXISTS moveMoney;
 
 DELIMITER //
 
@@ -133,7 +133,7 @@ CALL moveMoney("1111", "2222", 1.5);
 --
 -- Procedure moveMoney()
 --
-DROP PROCEDURE moveMoney;
+DROP PROCEDURE IF EXISTS moveMoney;
 
 DELIMITER //
 
@@ -180,3 +180,42 @@ DELIMITER ;
 
 CALL moveMoney("1111", "2222", 1.5);
 SELECT * FROM Account;
+
+
+
+--
+-- Try OUT variables from SP
+--
+DROP PROCEDURE IF EXISTS getMoney;
+
+DELIMITER //
+
+CREATE PROCEDURE getMoney(
+	IN account CHAR(4),
+    OUT total NUMERIC(4, 2)
+)
+BEGIN
+	SELECT balance INTO total FROM Account WHERE id = account;
+END
+//
+
+DELIMITER ;
+
+CALL getMoney("1111", @sum);
+SELECT @sum;
+
+
+
+--
+-- Select mutiple into variables
+--
+SELECT 1, 2 INTO @a, @b;
+SELECT @a, @b;
+
+
+
+--
+-- Admin on SP
+--
+SHOW PROCEDURE STATUS;
+SHOW CREATE PROCEDURE moveMoney;

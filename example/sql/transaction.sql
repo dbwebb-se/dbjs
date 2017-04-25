@@ -1,3 +1,4 @@
+use oophp;
 --
 -- https://dbwebb.se/kunskap/transaktioner-i-databas
 -- Example transactions
@@ -10,7 +11,7 @@ CREATE TABLE Account
     `balance` DECIMAL(4, 2)
 );
 
-DELETE FROM Account;
+-- DELETE FROM Account;
 INSERT INTO Account
 VALUES
 	("1111", "Adam", 10.0),

@@ -24,7 +24,7 @@ SELECT * FROM Account;
 --
 -- Procedure moveMoney()
 --
-DROP PROCEDURE moveMoney;
+DROP PROCEDURE IF EXISTS moveMoney;
 
 DELIMITER //
 
@@ -80,7 +80,7 @@ DROP TABLE IF EXISTS AccountLog;
 CREATE TABLE AccountLog
 (
 	`id` INTEGER PRIMARY KEY AUTO_INCREMENT,
-    `when` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `when` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `what` VARCHAR(20),
     `account` CHAR(4),
     `balance` DECIMAL(4, 2),
@@ -95,7 +95,7 @@ SELECT * FROM AccountLog;
 --
 -- Procedure moveMoney()
 --
-DROP PROCEDURE moveMoney;
+DROP PROCEDURE IF EXISTS moveMoney;
 
 DELIMITER //
 
