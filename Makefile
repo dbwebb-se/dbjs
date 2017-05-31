@@ -69,7 +69,7 @@ PHPMD   := bin/phpmd
 .PHONY: prepare
 prepare:
 	@$(call HELPTEXT,$@)
-	[ -d build/webroot ] || install -d build/webroot
+	[ -d build ]   || install -d build/webroot
 	[ -d bin/pip ] || install -d bin/pip
 
 
@@ -100,7 +100,7 @@ check: dbwebb-validate-check
 
 # target: test                    - Install test tools & run tests.
 .PHONY: test
-test: prepare check dbwebb-publish-run dbwebb-testrepo
+test: check dbwebb-publish-run dbwebb-testrepo
 	@$(call HELPTEXT,$@)
 
 
